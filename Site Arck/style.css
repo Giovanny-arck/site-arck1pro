@@ -1,0 +1,667 @@
+/* Customização das Cores da Marca */
+:root {
+  --primary-color: #c1904f;
+  --primary-color-hover: #a47633;
+  --secondary-color: #071f3a;
+  --text-dark: #333;
+  --text-light: #f9f9f9;
+}
+
+/* Reset de estilos básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Garante que o conteúdo principal ocupe o espaço restante na pagina empreendimentos */
+main {
+  flex-grow: 1; 
+}
+
+body {
+  /* FONTE PADRÃO ATUALIZADA AQUI */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.3;
+  color: var(--text-dark);
+}
+
+.navbar-nav a {
+  font-size: 16px;
+}
+
+/* Estilos de Fundo */
+.custom-navbar-bg {
+  background-color: var(--secondary-color);
+  padding: 1rem 0;
+}
+
+.custom-footer-bg {
+  background-color: var(--secondary-color);
+}
+
+/* Estilos de Botão */
+.custom-btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.custom-btn-primary:hover {
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-color-hover);
+  color: white;
+}
+
+/* Estilos para a navegação */
+.nav-link {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Estilos do Texto e Cores de Destaque */
+.text-custom-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.797);
+}
+
+/* Seção de Carrossel - Estilos Manuais */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item-custom {
+  height: 96vh;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel-item-custom.active {
+  opacity: 1;
+  position: relative;
+}
+
+.carousel-content {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.797);
+  max-width: 50%;
+  text-align: left;
+}
+
+.carousel-content h2 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.carousel-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Botões de controle do carrossel */
+.carousel-control-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 2rem;
+  z-index: 10;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-custom:hover {
+  opacity: 1;
+}
+
+.carousel-control-custom.prev {
+  left: 20px;
+}
+
+.carousel-control-custom.next {
+  right: 20px;
+}
+
+/* Estilos para os indicadores */
+.carousel-indicators-custom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicator-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicator-btn.active {
+  background-color: white;
+}
+
+
+/* Ajustes responsivos para carrossel */
+@media (max-width: 768px) {
+  .carousel-item-custom {
+    height: 70vh;
+    padding: 0 20px;
+  }
+  .carousel-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .carousel-content h2 {
+    font-size: 28px;
+  }
+  .carousel-content p {
+    font-size: 16px;
+  }
+}
+
+/* Linha decorativa para títulos de seção sobre nós  */
+.title-underline {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px; /* Largura da linha */
+  height: 4px;  /* Espessura da linha */
+  background-color: var(--primary-color); /* Usa sua cor primária */
+  border-radius: 2px;
+}
+
+/* Estilo para os ícones dos cards sobre nós */
+.card-icon {
+  font-size: 2rem; /* Tamanho do ícone */
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+/* Animação de fade-in seção sobre nós*/
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilos para os itens da linha do tempo */
+.timeline-item {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+}
+/* Cor de fundo para a seção da timeline */
+#servicos-timeline {
+  background-color: #071f3a !important; /* Adicionado !important para sobrescrever o Bootstrap */
+}
+#servicos-timeline h2{
+  color: #ffffff !important; /* Adicionado !important para sobrescrever o Bootstrap */
+}
+
+/* Seção de Contadores */
+.counter-section .display-4 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.counter-section p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Ajustes para Navbar com Logo Centralizada */
+@media (max-width: 991.98px) {
+  
+  /* 1. Define uma altura mínima para a barra de navegação */
+  .navbar {
+    min-height: 70px; /* Ajuste se a altura da sua logo for diferente */
+  }
+
+  /* 2. Centraliza a logo perfeitamente no espaço criado */
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* 3. Posiciona o botão do menu hambúrguer à direita */
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  /* 4. Faz o menu expandido começar ABAIXO da barra de navegação */
+  .navbar-collapse {
+    /* Posiciona o menu de forma absoluta em relação à <nav> */
+    position: absolute;
+    top: 70px; /* IMPORTANTE: Este valor deve ser igual ao min-height do .navbar */
+    left: 0;
+    width: 100%;
+    
+    /* Adiciona um fundo para não ficar transparente sobre o conteúdo da página */
+    background-color: var(--secondary-color);
+    
+    /* Melhora o alinhamento e espaçamento dos itens do menu */
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+/* --- Melhorias na Seção Sobre Nós --- */
+/* 1. Aumenta o tamanho da fonte dos parágrafos */
+section#sobre p {
+  font-size: 1.1rem !important;
+  line-height: 1.1 !important;
+}
+
+/* 2. Adiciona mais espaço entre a imagem e o texto em telas maiores */
+@media (min-width: 992px) {
+  section#sobre .row .col-lg-6:first-child {
+    padding-right: 5.0rem; 
+  }
+}
+
+/* 3. Adiciona uma sombra mais forte e um efeito de elevação aos cards */
+section#sobre .card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section#sobre .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* --- Ajuste para a imagem preencher a altura da coluna de texto --- */
+@media (min-width: 992px) { /* Aplica apenas em telas grandes (desktop) */
+  #sobre .row {
+    align-items: stretch; /* Garante que as colunas tenham a mesma altura */
+  }
+
+  #sobre .row img {
+    height: 100%; /* Faz a imagem ocupar 100% da altura da coluna */
+    object-fit: cover; /* ESSENCIAL: Preenche o espaço sem distorcer a imagem, cortando o excesso */
+  }
+}
+
+/* --- Estilos para a Timeline de Serviços com Animação Sequencial --- */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+/* A linha vertical central */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 21px;
+  height: 100%;
+  width: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  /* Estado inicial da linha (escondida) */
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.5s ease-out; /* Duração do crescimento da linha */
+}
+
+/* Ativa a animação da linha quando a seção estiver visível */
+.timeline.is-visible::before {
+  transform: scaleY(1);
+}
+
+/* Container de cada item da timeline */
+.timeline-container {
+  position: relative;
+  margin-bottom: 40px;
+  /* Estado inicial dos itens (escondidos e deslocados para a esquerda) */
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Ativa a animação dos itens com atraso (stagger) */
+.timeline.is-visible .timeline-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Atraso para cada item aparecer em sequência */
+.timeline.is-visible .timeline-container:nth-child(1) { transition-delay: 0.2s; }
+.timeline.is-visible .timeline-container:nth-child(2) { transition-delay: 0.4s; }
+.timeline.is-visible .timeline-container:nth-child(3) { transition-delay: 0.6s; }
+.timeline.is-visible .timeline-container:nth-child(4) { transition-delay: 0.8s; }
+.timeline.is-visible .timeline-container:nth-child(5) { transition-delay: 0.8s; }
+
+
+/* O ícone circular na linha (mesmo estilo de antes) */
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 46px;
+  height: 46px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 1;
+  border: 3px solid white;
+  box-shadow: 0 0 0 4px var(--primary-color);
+}
+
+/* O card com o conteúdo de texto (mesmo estilo de antes) */
+.timeline-body {
+  margin-left: 80px;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.timeline-title .badge {
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 50px;
+}
+
+.timeline-body h5 {
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+.timeline-container p {
+font-size: 1.3rem;
+}
+
+/* --- ESTILOS CORRIGIDOS PARA O CARROSSEL DE EMPREENDIMENTOS --- */
+
+/* Contêiner principal do carrossel (agora como classe) */
+.empreendimento-carousel-container {
+  background-color: #f8f9fa; /* Um cinza claro sutil para o fundo */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 1rem; /* Adiciona um respiro/borda interna */
+}
+
+/* Deixamos o Bootstrap controlar o posicionamento do item */
+.carousel-item {
+  text-align: center; /* Ajuda a centralizar a imagem */
+}
+
+/* A imagem dentro do carrossel - AQUI CONTROLAMOS O TAMANHO */
+.carousel-img {
+  max-height: 750px;  /* Define a altura máxima - "Tamanho Médio" */
+  width: auto;        /* Largura se ajusta para manter a proporção da imagem */
+  max-width: 100%;    /* Garante que a imagem não fique maior que o contêiner */
+  object-fit: contain;/* Garante que a imagem inteira apareça sem distorção */
+  border-radius: 5px;
+  transition: transform 0.3s ease; /* Transição para o efeito de hover */
+}
+
+/* O card que envolve a imagem */
+.carousel-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  display: inline-block; /* Ajusta o card ao tamanho da imagem */
+}
+
+/* Efeito de zoom na imagem ao passar o mouse */
+.carousel-card:hover .carousel-img {
+  transform: scale(1.05);
+}
+
+/* Overlay que aparece no hover */
+.overlay-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 120px;
+}
+
+/* Ativa o overlay no hover */
+.carousel-card:hover .overlay-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Título e texto do overlay */
+.overlay-title {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.overlay-title:hover {
+  color: var(--primary-color);
+}
+.overlay-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ajustes para os botões de controle e indicadores do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--primary-color); /* Cor dos ícones */
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--primary-color);
+}
+
+/* ================================================================= */
+/* --- ESTILOS PÁGINA INCORPORADORA PRO (TOTALMENTE ATUALIZADO) --- */
+/* ================================================================= */
+
+.pagina-incorporadora {
+    --inc-brand-gold: #c5a47e;
+    --inc-brand-navy: #0f172a;
+    --inc-brand-cream: #f8f5f1;
+    --inc-success: #28a745;
+}
+
+/* Estrutura Geral */
+.pagina-incorporadora .inc-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+.pagina-incorporadora .inc-section { padding: 5rem 0; }
+.pagina-incorporadora .inc-grid { display: grid; gap: 2rem; }
+.pagina-incorporadora .inc-grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.pagina-incorporadora .inc-grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.pagina-incorporadora .inc-mt-16 { margin-top: 4rem; }
+.pagina-incorporadora .inc-mb-12 { margin-bottom: 3rem; }
+.pagina-incorporadora .inc-mb-16 { margin-bottom: 4rem; }
+
+/* Tipografia */
+.pagina-incorporadora h1, .pagina-incorporadora h2, .pagina-incorporadora h3 { font-weight: bold; color: var(--inc-brand-navy); }
+.pagina-incorporadora h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.2; }
+.pagina-incorporadora h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+.pagina-incorporadora h3 { font-size: 1.25rem; }
+.pagina-incorporadora p { color: #555; }
+.pagina-incorporadora .inc-text-center { text-align: center; }
+.pagina-incorporadora .inc-brand-gold { color: var(--inc-brand-gold) !important; }
+.pagina-incorporadora .inc-bg-cream { background-color: var(--inc-brand-cream); }
+.pagina-incorporadora .inc-card { background: white; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+/* 1. Hero Section */
+.pagina-incorporadora .inc-hero-section { min-height: 90vh; padding: 5rem 0; position: relative; display: flex; align-items: center; color: white; }
+.pagina-incorporadora .inc-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.pagina-incorporadora .inc-hero-gradient { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)); }
+.pagina-incorporadora .inc-hero-grid { position: relative; z-index: 2; }
+.pagina-incorporadora .inc-logo { position: absolute; top: -15rem; left: -5rem; }
+.pagina-incorporadora .inc-logo-img { max-width: 550px; }
+.pagina-incorporadora .inc-hero-content {margin-top: 8rem; /* Move o bloco de texto para baixo. Ajuste este valor se precisar */}
+.pagina-incorporadora .inc-hero-content h1 { color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.pagina-incorporadora .inc-hero-content p { color: rgba(255, 255, 255, 0.9); font-size: 1.5rem; max-width: 80%; }
+
+/* 2. Benefit Section */
+.pagina-incorporadora .inc-benefit-card {
+    background-color: var(--inc-brand-navy);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--inc-brand-gold);
+    border-radius: 8px;
+}
+.pagina-incorporadora .inc-benefit-card p { color: white; font-weight: 500; font-size: 1.1rem; }
+.pagina-incorporadora .inc-benefit-card i {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 48px;
+    height: 48px;
+    color: var(--inc-brand-gold);
+}
+
+/* 4. Market Section ("Traga sua incorporadora") */
+.pagina-incorporadora .inc-market-grid { display: grid; gap: 3rem; align-items: center; grid-template-columns: 1fr; }
+@media(min-width: 992px) { .pagina-incorporadora .inc-market-grid { grid-template-columns: 1fr 1fr; } }
+.pagina-incorporadora .inc-market-text p { font-size: 1.1rem; line-height: 1.7; }
+.pagina-incorporadora .inc-market-image-box { position: relative; }
+.pagina-incorporadora .inc-market-image-box img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.pagina-incorporadora .inc-image-overlay-card {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 80%;
+}
+.pagina-incorporadora .inc-image-overlay-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--inc-brand-navy); }
+.pagina-incorporadora .inc-image-overlay-card p { font-size: 0.9rem; margin: 0; }
+.pagina-incorporadora .inc-feature-card {
+    background-color: var(--inc-brand-navy); color: white; padding: 2rem;
+    text-align: center; border-radius: 8px;
+}
+.pagina-incorporadora .inc-feature-card p { color: white; font-weight: 500; margin: 0; }
+.pagina-incorporadora .inc-feature-card i { display: block; margin: 0 auto 1rem auto; width: 48px; height: 48px; color: var(--inc-brand-gold); }
+
+/* 3. Cases Section */
+.pagina-incorporadora .inc-case-card { padding: 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 8px; }
+.pagina-incorporadora .inc-case-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+.pagina-incorporadora .inc-case-img { width: 100%; height: 250px; object-fit: contain; }
+.pagina-incorporadora .inc-case-body { padding: 1.5rem; }
+.pagina-incorporadora .inc-case-body h3 { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; }
+.pagina-incorporadora .inc-case-body h3 i { width: 24px; height: 24px; color: var(--inc-brand-navy); }
+.pagina-incorporadora .inc-company { color: #777; margin-bottom: 1rem; }
+.pagina-incorporadora .inc-case-details { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem; }
+.pagina-incorporadora .inc-case-details strong { font-size: 1.1rem; color: var(--inc-brand-navy); }
+.pagina-incorporadora .inc-profit-badge {
+    background-color: var(--inc-brand-gold); color: white;
+    text-align: center; padding: 0.75rem; border-radius: 8px; font-weight: bold; margin-bottom: 1rem;
+}
+.pagina-incorporadora .inc-investment { font-size: 0.9rem; text-align: center; color: #777; }
+
+/* 5. About Section ("Quem estará à frente") */
+.pagina-incorporadora .inc-subtitle-alt { color: #888; font-weight: bold; margin-bottom: 0.5rem; }
+.pagina-incorporadora .inc-about-card { background: white; padding: 3rem; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+.pagina-incorporadora .inc-about-grid { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center; }
+.pagina-incorporadora .inc-about-photo img {
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+    border: 5px solid var(--inc-brand-cream);
+}
+.pagina-incorporadora .inc-about-text h3 { font-size: 2rem; margin-bottom: 0.5rem; }
+.pagina-incorporadora .inc-features-list ul { list-style: none; padding: 0; }
+.pagina-incorporadora .inc-features-list li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; color: #555; }
+.pagina-incorporadora .inc-features-list i { color: var(--inc-brand-gold); flex-shrink: 0; margin-top: 4px; }
+
+/* Ajuste para o scroll não ficar atrás do menu fixo */
+section[id] {
+  scroll-margin-top: -30px;
+}
+/* --- Estilos Página Negocie Terreno --- */
+#negocie-terreno-section .form-container {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+#negocie-terreno-section .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(193, 144, 79, 0.25);
+}
+
+#negocie-terreno-section .title-underline::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  #negocie-terreno-section .form-container {
+    padding: 1.5rem;
+  }
+}
