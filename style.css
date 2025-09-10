@@ -636,7 +636,7 @@ font-size: 1.3rem;
 
 /* Ajuste para o scroll não ficar atrás do menu fixo */
 section[id] {
-  scroll-margin-top: -10px;
+  scroll-margin-top: -80px;
 }
 /* --- Estilos Página Negocie Terreno --- */
 #negocie-terreno-section .form-container {
