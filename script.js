@@ -210,5 +210,61 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  // =======================================================
+  // --- LÓGICA DO FORMULÁRIO DE CONTATO (HOME) ---
+  // =======================================================
+  const contatoForm = document.getElementById('contato-form');
+
+  if (contatoForm) {
+    contatoForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const submitBtn = document.getElementById('contato-submit-btn');
+      const spinner = submitBtn.querySelector('.spinner-border');
+      const formMessage = document.getElementById('contato-form-message');
+      
+      // Desabilitar botão e mostrar spinner
+      submitBtn.disabled = true;
+      spinner.style.display = 'inline-block';
+      formMessage.innerHTML = '';
+
+      // 1. Obter os dados do formulário
+      const formData = new FormData(contatoForm);
+      const data = Object.fromEntries(formData.entries());
+
+      // 2. Formatar o número de telefone com +55
+      const telefoneLimpo = data.telefone.replace(/\D/g, ''); // Remove tudo que não for dígito
+      data.telefone_formatado = `+55${telefoneLimpo}`; // Adiciona o +55 na frente
+
+      // 3. Enviar para o Webhook
+      const webhookUrl = 'SUA_URL_DE_WEBHOOK_AQUI'; // <-- ATENÇÃO: SUBSTITUA ESTA URL!
+
+      try {
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+          throw new Error('Houve um problema ao enviar sua mensagem. Tente novamente.');
+        }
+
+        // Sucesso!
+        formMessage.innerHTML = `<div class="alert alert-success">Mensagem enviada com sucesso! Agradecemos o seu contato.</div>`;
+        contatoForm.reset(); // Limpa o formulário
+
+      } catch (error) {
+        // Erro
+        formMessage.innerHTML = `<div class="alert alert-danger">${error.message || 'Não foi possível enviar sua mensagem.'}</div>`;
+      } finally {
+        // Reabilitar botão e esconder spinner
+        submitBtn.disabled = false;
+        spinner.style.display = 'none';
+      }
+    });
+  }
 
 });
