@@ -661,3 +661,15 @@ section[id] {
     padding: 1.5rem;
   }
 }
+/* Garante que os cards de Missão/Visão/Valores tenham a mesma altura */
+#sobre .row.text-center {
+  align-items: stretch;
+}
+
+#sobre .row.text-center .col-md-4 {
+  display: flex;
+}
+
+#sobre .row.text-center .card {
+  width: 100%;
+}
