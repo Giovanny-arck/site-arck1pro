@@ -210,9 +210,8 @@ body {
 
 /* Estilo para os ícones dos cards sobre nós */
 .card-icon {
-  font-size: 2rem; /* Tamanho do ícone */
+  font-size: 0.10rem; /* Tamanho do ícone */
   color: var(--primary-color);
-  margin-bottom: 1rem;
 }
 /* Animação de fade-in seção sobre nós*/
 .fade-in-section {
@@ -295,21 +294,30 @@ body {
   }
 }
 
-/* --- Melhorias na Seção Sobre Nós --- */
-/* 1. Aumenta o tamanho da fonte dos parágrafos */
+/* --- Melhorias na Seção Sobre Nós (Código Corrigido e Simplificado) --- */
+
+/* Estilo para os parágrafos da seção */
 section#sobre p {
   font-size: 1.1rem !important;
-  line-height: 1.1 !important;
+  line-height: 1.4 !important; /* Aumentado para melhor legibilidade */
 }
 
-/* 2. Adiciona mais espaço entre a imagem e o texto em telas maiores */
+/* Regra principal para a imagem da seção "Sobre Nós" */
+.sobre-nos-img {
+  width: 100%; /* A imagem ocupa a largura total da sua coluna */
+  max-height: 500px; /* Define uma altura máxima para a imagem não ficar gigante */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 0.375rem; /* Mantém as bordas arredondadas do Bootstrap */
+}
+
+/* Alinha verticalmente o conteúdo das colunas em telas maiores */
 @media (min-width: 992px) {
-  section#sobre .row .col-lg-6:first-child {
-    padding-right: 5.0rem; 
+  #sobre .row {
+    align-items: center; 
   }
 }
 
-/* 3. Adiciona uma sombra mais forte e um efeito de elevação aos cards */
+/* Estilos para os cards de Missão, Visão e Valores */
 section#sobre .card {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -318,18 +326,6 @@ section#sobre .card {
 section#sobre .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* --- Ajuste para a imagem preencher a altura da coluna de texto --- */
-@media (min-width: 992px) { /* Aplica apenas em telas grandes (desktop) */
-  #sobre .row {
-    align-items: stretch; /* Garante que as colunas tenham a mesma altura */
-  }
-
-  #sobre .row img {
-    height: 50%; /* Faz a imagem ocupar 100% da altura da coluna */
-    object-fit: cover; /* ESSENCIAL: Preenche o espaço sem distorcer a imagem, cortando o excesso */
-  }
 }
 
 /* --- Estilos para a Timeline de Serviços com Animação Sequencial --- */
@@ -640,7 +636,7 @@ font-size: 1.3rem;
 
 /* Ajuste para o scroll não ficar atrás do menu fixo */
 section[id] {
-  scroll-margin-top: -30px;
+  scroll-margin-top: -50px;
 }
 /* --- Estilos Página Negocie Terreno --- */
 #negocie-terreno-section .form-container {
