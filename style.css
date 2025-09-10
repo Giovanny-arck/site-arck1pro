@@ -327,7 +327,7 @@ section#sobre .card:hover {
   }
 
   #sobre .row img {
-    height: 100%; /* Faz a imagem ocupar 100% da altura da coluna */
+    height: 50%; /* Faz a imagem ocupar 100% da altura da coluna */
     object-fit: cover; /* ESSENCIAL: Preenche o espaço sem distorcer a imagem, cortando o excesso */
   }
 }
