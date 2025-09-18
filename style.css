@@ -143,6 +143,7 @@ section[id] {
   background-size: cover;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 80px;
   opacity: 0;
   position: absolute;
@@ -159,19 +160,23 @@ section[id] {
 .carousel-content {
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-  max-width: 50%;
-  text-align: left;
+  max-width: 70%;
+  text-align: center;
 }
 
 .carousel-content h2 {
-  font-size: 50px;
-  margin-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 10px;
   font-weight: bold;
+  text-align: justify;
+  margin-bottom: 1.5rem;
 }
 
 .carousel-content p {
   font-size: 20px;
   margin-bottom: 20px;
+  text-align: justify;
+  margin-bottom: 1.5rem;
 }
 
 .carousel-control-custom {
@@ -507,13 +512,13 @@ section#sobre .card:hover {
 
 .pagina-incorporadora .inc-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: -2; }
 .pagina-incorporadora .inc-hero-gradient { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)); z-index: -1; }
-.pagina-incorporadora .inc-hero-content h1 { color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); text-align: left; }
-.pagina-incorporadora .inc-hero-content p { color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; max-width: 80%; }
+.pagina-incorporadora .inc-hero-content h1 { color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); text-align: left; margin-bottom: 1.5rem; }
+.pagina-incorporadora .inc-hero-content p { color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; max-width: 80%; margin-bottom: 1.5rem; }
 
 .pagina-incorporadora .inc-logo-img {
   width: 100%;
   max-width: 550px;
-  /* Revertido para não ter margem negativa */
+  /* margem negativa */
   margin-left: -5rem;
 }
 
@@ -685,6 +690,10 @@ section#sobre .card:hover {
 
 /* Telas grandes (a partir de 992px) */
 @media (min-width: 992px) {
+  /* --- GERAL --- */
+  .navbar-brand { margin-left: 1.5rem !important; }
+  .navbar-nav { margin-right: 1rem !important; }
+
   .gallery-img {
     height: 600px;
   }
@@ -694,4 +703,8 @@ section#sobre .card:hover {
   .pagina-incorporadora .inc-market-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .pagina-incorporadora .inc-logo-img {
+  /* margem negativa somente na logo */
+  margin-left: -4rem;
+}
 }
