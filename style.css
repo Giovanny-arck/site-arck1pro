@@ -131,52 +131,54 @@ section[id] {
 /* 4. SEÇÕES DA PÁGINA HOME
 /* =================================================================== */
 
-/* --- 4.1 Carrossel Hero --- */
 .carousel-container {
   position: relative;
   overflow: hidden;
 }
-
-.carousel-item-custom {
+.carousel-inner-custom {
+  position: relative;
+  width: 100%;
   height: calc(100vh - var(--navbar-height-desktop));
+}
+.carousel-item-custom {
+  height: 100%;
+  width: 100%;
   background-position: center center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 80px;
-  opacity: 0;
+  padding: 0 3rem; /* Padrão de espaçamento lateral */
   position: absolute;
   top: 0;
-  width: 100%;
-  transition: opacity 0.5s ease-in-out;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Transição mais rápida */
+  z-index: 1; /* Camada inferior */
 }
-
 .carousel-item-custom.active {
   opacity: 1;
-  position: relative;
+  z-index: 2; /* Camada superior, permite cliques */
 }
-
 .carousel-content {
+  max-width: 70%; /* Largura máxima para o texto centralizado */
+  text-align: center; /* Centraliza o texto e o botão */
   color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-  max-width: 70%;
-  text-align: center;
 }
 
 .carousel-content h2 {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 40px;
   font-weight: bold;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 1.5rem;
+  color: white;
 }
 
 .carousel-content p {
   font-size: 20px;
-  margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 1.5rem;
+  color: white;
 }
 
 .carousel-control-custom {
@@ -706,5 +708,19 @@ section#sobre .card:hover {
   .pagina-incorporadora .inc-logo-img {
   /* margem negativa somente na logo */
   margin-left: -4rem;
+  }
+  .carousel-content h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.carousel-content p {
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  color: white;
 }
 }
