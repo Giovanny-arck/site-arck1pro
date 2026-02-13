@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data.telefone_formatado = `+55${telefoneLimpo}`;
 
       // 3. Enviar para o Webhook
-      const webhookUrl = 'URL_DO_SEU_WEBHOOK_AQUI'; // <-- ATENÇÃO: SUBSTITUA ESTA URL!
+      const webhookUrl = 'https://n8nwebhook.arck1pro.shop/webhook/form-site-arck1pro'; // <-- ATENÇÃO: SUBSTITUA ESTA URL!
 
       try {
         const response = await fetch(webhookUrl, {
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data.telefone_formatado = `+55${telefoneLimpo}`; // Adiciona o +55 na frente
 
       // 3. Enviar para o Webhook
-      const webhookUrl = 'SUA_URL_DE_WEBHOOK_AQUI'; // <-- ATENÇÃO: SUBSTITUA ESTA URL!
+      const webhookUrl = 'https://n8nwebhook.arck1pro.shop/webhook/form-site-arck1pro'; // <-- ATENÇÃO: SUBSTITUA ESTA URL!
 
       try {
         const response = await fetch(webhookUrl, {
